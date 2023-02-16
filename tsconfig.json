@@ -4,12 +4,15 @@
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "isolatedModules": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "target": "ES2019",
     "strict": true,
     "allowJs": true,
+    "checkJs": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
@@ -18,5 +21,9 @@
 
     // Remix takes care of building everything in `remix build`.
     "noEmit": true
+  },
+  "compileOnSave": true,
+  "typingOptions": {
+    "enableAutoDiscovery": true
   }
 }
