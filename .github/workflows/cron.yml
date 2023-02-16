@@ -1,0 +1,13 @@
+name: daily-cron
+on:
+  schedule:
+    - cron: '0 1 * * *'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for dead or third party-hosted links
+        run: |
+          curl --request POST \
+          --url 'notion-link-checker.vercel.app/api/check-links' \
+          --header 'Authorization: Bearer ${{ secrets.CRON_SECRET_KEY }}'
